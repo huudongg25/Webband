@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>W3.WBand</title>
+    <title>HuuDong-The Band</title>
     <link rel="icon" type="image/x-icon" href="https://icons.veryicon.com/png/o/internet--web/common-social-site-icons-for-the-web/ins.png">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
 </head>
 <body>
@@ -20,13 +21,13 @@
                     <li><a href="#tour">TOUR</a></li>
                     <li><a href="#contact">CONTACT</a></li>
                     <li>
-                        <a href="">MORE
+                        <a href="#footer">MORE
                             <i class="arrow-down ti-angle-down" ></i>
                         </a>
                         <ul class="subnav">
-                            <li><a href="">Merchandise</a></li>
-                            <li><a href="">Extras</a></li>
-                            <li><a href="">Media</a></li>
+                            <li><a href="#footer">Merchandise</a></li>
+                            <li><a href="#footer">Extras</a></li>
+                            <li><a href="#footer">Media</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -34,6 +35,10 @@
                 <!--search button-->
                 <div class="search-btn">
                        <i class="search-icon ti-search"></i>
+                </div>
+                
+                <div id="mb-menu" class="mobile-menu-btn">
+                    <i class="menu-icon ti-menu"></i>
                 </div>
             
                 <!--search button-->
@@ -83,7 +88,7 @@
                  </ul>
                  
                  <div class="row place-list">
-                     <div class="col col-third  place-item">
+                     <div class="place-list col col-third mt-16   place-item">
                          <img src="./assets/images/places/place1.jpg" alt="New York" class="place-img">
                         <div class="place-body">
                          <h3 class="place-heading" >New York</h3>
@@ -92,7 +97,7 @@
                         <button  class="buy-btn">Buy Tickets</button>
                         </div>
                     </div>
-                    <div class="col col-third  place-item">
+                    <div class="place-list col col-third mt-16  place-item">
                         <img src="./assets/images/places/place2.jpg" alt="New York" class="place-img">
                      <div class="place-body">
                         <h3 class="place-heading" >Paris</h3>
@@ -101,7 +106,7 @@
                        <button  class="buy-btn">Buy Tickets</button>
                     </div>
                    </div> 
-                   <div class="col col-third place-item">
+                   <div class="place-list col col-third mt-16 place-item">
                     <img src="./assets/images/places/place3.jpg" alt="New York" class="place-img">
                     <div class="place-body">
                     <h3 class="place-heading" >San Francisco</h3>
@@ -122,13 +127,13 @@
                 <p class="container-subhead">Fan? Drop a note!</p>
                  
                 <div class="row contact-content">
-                     <div class="col col-half contact-info">
+                     <div class="col col-half s-col-full contact-info">
                         <p><i class="ti-location-pin"></i>Chicago, US</p> 
                         <p><i class="ti-mobile"></i>Phone: +00 151515</p> 
                         <p><i class="ti-email"></i>Email: mail@mail.com</p> 
                     </div>
                      
-                     <div class="col col-half contact-form">
+                     <div class="col col-half s-col-full contact-form">
                         <form action="">
                             <div class="row">
                                 <div class="col col-half input1">
@@ -161,9 +166,9 @@
         <div id="footer">
             <div class="footer-list">
                 <div class="social-list">
-                    <a href=""><i class="ti-facebook"></i></a>
-                    <a href=""><i class="ti-instagram"></i></a>
-                    <a href=""><i class="ti-youtube"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100009492562116"><i class="ti-facebook"></i></a>
+                    <a href="https://www.instagram.com/_huudong.ig/"><i class="ti-instagram"></i></a>
+                    <a href="https://www.youtube.com/"><i class="ti-youtube"></i></a>
                     <a href=""><i class="ti-pinterest"></i></a>
                     <a href=""><i class="ti-twitter-alt"></i></a>
                     <a href=""><i class="ti-linkedin"></i></a>
@@ -201,7 +206,7 @@
                         Pay <i class="ti-check"></i>
                     </button> 
 
-
+                
                 </div>
 
                 <div class="modal-footer">
@@ -210,5 +215,33 @@
             </div>
         </div>
     </div>
+    <script>
+        var header = document.getElementById('header');
+        var mobileMenu = document.getElementById('mb-menu');
+        
+        mobileMenu.onclick = function() {
+            var isClosed = header.clientHeight === 46;
+            if (isClosed) {
+                header.style.height = 'auto';
+            } else {
+                header.style.height = '46px';
+            }
+        }
+
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+        for (var i=0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+
+            menuItem.onclick = function(event) {
+            var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');    
+                if (isParentMenu) {
+                    event.preventDefault() ;
+                } else {
+                   header.style.height = '46px';
+                }
+            }
+        }
+    
+    </script>
 </body>
 </html>
