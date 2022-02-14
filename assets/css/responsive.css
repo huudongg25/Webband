@@ -55,4 +55,7 @@
     .contact-content .contact-form {
         margin-top: 20px;
     }
+    .contact-form .form-submit-btn {
+        padding: 14px 0;
+    }
 }
