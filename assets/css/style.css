@@ -173,7 +173,7 @@ html{
     position: relative;
     margin-top: 46px;
     padding-top: 50%;
-    background-image: url('/assets/images/slider/slider1.jpg');
+    background-image: url('../images/slider/slider1.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     background-position: top center;
