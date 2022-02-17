@@ -57,5 +57,7 @@
     }
     .contact-form .form-submit-btn {
         padding: 14px 0;
+        -webkit-appearance: none;
+        appearance: none;
     }
 }
